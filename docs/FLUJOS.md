@@ -8,31 +8,18 @@ Este documento describe flujos de trabajo prácticos para desarrolladores que co
 
 Este es el flujo fundamental que deberías usar para cualquier tarea no trivial. La idea central es simple: **no escribas código hasta que sepas qué vas a escribir, y no des por terminado nada hasta que lo hayas verificado**.
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                         PLAN                                 │
-│  Definir qué hacer antes de cómo hacerlo                    │
-└─────────────────────────────────────────────────────────────┘
-                            │
-                            ▼
-┌─────────────────────────────────────────────────────────────┐
-│                       IMPLEMENT                              │
-│  Claude escribe código, tú supervisas                       │
-└─────────────────────────────────────────────────────────────┘
-                            │
-                            ▼
-┌─────────────────────────────────────────────────────────────┐
-│                       VALIDATE                               │
-│  Verificar que funciona antes de continuar                  │
-└─────────────────────────────────────────────────────────────┘
-                            │
-                            ▼
-                    ¿Funciona? ──No──► Volver a IMPLEMENT
-                        │
-                       Sí
-                        │
-                        ▼
-                   Commit + Siguiente tarea
+```mermaid
+graph TD
+    A[PLAN<br/>Definir qué hacer antes de cómo hacerlo] --> B[IMPLEMENT<br/>Claude escribe código, tú supervisas]
+    B --> C[VALIDATE<br/>Verificar que funciona antes de continuar]
+    C --> D{¿Funciona?}
+    D -->|No| B
+    D -->|Sí| E[Commit + Siguiente tarea]
+
+    style A fill:#e1f5fe
+    style B fill:#fff9c4
+    style C fill:#f3e5f5
+    style E fill:#c8e6c9
 ```
 
 ---

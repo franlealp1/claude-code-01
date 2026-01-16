@@ -7,13 +7,16 @@ Material del curso de introducción a Claude Code. Este repositorio contiene tod
 ```
 .
 ├── README.md                    # Este archivo
-├── .claude/                     # Ejemplos de configuración de Claude Code
-│   ├── agents/                  # Agentes personalizados de ejemplo
-│   └── commands/                # Skills (comandos) personalizados de ejemplo
 ├── proyecto-inventario/         # Proyecto de práctica
 │   ├── index.html              # Abrir en navegador para usar la app
 │   ├── css/
+│   ├── data/
 │   └── js/
+│       ├── app.js
+│       ├── models/
+│       ├── services/
+│       ├── utils/
+│       └── database/
 └── docs/                        # Material del curso
     ├── Syllabus.md             # Contenido completo del curso
     ├── FLUJOS.md               # Flujos de trabajo con Claude Code

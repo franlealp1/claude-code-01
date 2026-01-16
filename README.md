@@ -19,7 +19,7 @@ Material del curso de introducción a Claude Code. Este repositorio contiene tod
 │       └── database/
 └── docs/                        # Material del curso
     ├── Syllabus.md             # Contenido completo del curso
-    ├── FLUJOS.md               # Flujos de trabajo con Claude Code
+    ├── Flujos de trabajo.md               # Flujos de trabajo con Claude Code
     ├── prompts-vs-agentes.md   # Diferencia entre prompts y agentes
     └── ejercicios.md           # Ejercicios para practicar
 ```
@@ -62,7 +62,7 @@ Sigue el material en [docs/Syllabus.md](docs/Syllabus.md). El instructor te guia
 ### Material de referencia
 
 - [Syllabus.md](docs/Syllabus.md) — Contenido completo del curso
-- [FLUJOS.md](docs/FLUJOS.md) — Flujos de trabajo recomendados (PIV loop)
+- [Flujos de trabajo.md](docs/Flujos de trabajo.md) — Flujos de trabajo recomendados (PIV loop)
 - [prompts-vs-agentes.md](docs/prompts-vs-agentes.md) — Cuándo usar prompts vs agentes
 - [ejercicios.md](docs/ejercicios.md) — Ejercicios prácticos por nivel
 

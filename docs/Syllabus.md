@@ -207,7 +207,7 @@ Cada proyecto tiene sus propias convenciones, reglas, y contexto que no son obvi
 
 ### Qué es CLAUDE.md
 
-Piensa en CLAUDE.md como un README, pero para Claude. Es un archivo en la raíz de tu proyecto donde defines:
+Piensa en CLAUDE.md como un README, pero para Claude. Es un archivo donde defines:
 
 - Reglas de código del proyecto (usar const/let en vez de var, por ejemplo)
 - Convenciones del equipo (nombres de archivos, estructura de carpetas)
@@ -215,6 +215,8 @@ Piensa en CLAUDE.md como un README, pero para Claude. Es un archivo en la raíz 
 - Instrucciones específicas (idioma de respuestas, formato preferido)
 
 Claude lee este archivo automáticamente al inicio de cada conversación y sigue las instrucciones que contiene.
+
+**Tres niveles posibles**: Puedes tener CLAUDE.md a nivel de workspace global (`~/.claude/CLAUDE.md`), proyecto (raíz del repositorio), o directorio específico. Las instrucciones se aplican de más general a más específico. [Ver documentación oficial](https://docs.anthropic.com/en/docs/build-with-claude/claude-code/guide#claude-context-files).
 
 ### Creando tu CLAUDE.md
 

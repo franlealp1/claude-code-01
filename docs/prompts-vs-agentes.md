@@ -92,7 +92,7 @@ Agente: [Lee archivos] → [Busca patrones] → [Analiza vulnerabilidades] →
 - 📚 **Exhaustivos**: Analizan todo lo necesario
 
 **Inconvenientes:**
-- ⏱️ **Lentos**: Múltiples turnos toman tiempo
+- ⏱️ **Más lentos**: Requieren múltiples turnos
 - 💸 **Costosos**: Consumen más tokens
 - 🎭 **Opacos**: No ves el trabajo interno en tiempo real
 - 🎲 **Variables**: El resultado puede variar
@@ -167,11 +167,8 @@ Los agentes especializados incluyen:
 - **general-purpose**: Tareas multi-paso
 - **Explore**: Exploración rápida de codebase
 - **Plan**: Arquitectura de implementación
-- **security-auditor**: Auditorías de seguridad
-- **express-refactor-specialist**: Refactoring Node.js/Express
-- **coolify-deployment-advisor**: Deploy con Coolify
 
-Cada uno tiene su expertise y herramientas optimizadas.
+También hay agentes especializados adicionales para casos de uso específicos como refactoring Node.js/Express o deployment con Coolify. Puedes ver los agentes disponibles mediante comandos específicos de Claude Code.
 
 ## Conclusión
 

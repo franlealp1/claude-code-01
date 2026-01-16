@@ -3,7 +3,7 @@
 ## IMPORTANTE: Version HTML/JavaScript
 Estos ejercicios usan la version HTML/JavaScript del proyecto. Solo necesitas un navegador moderno.
 
-## Ejercicio Durante el Curso (18 minutos)
+## Ejercicio Durante el Curso
 
 ### Objetivo
 Escribir un PRD simple y ver a Claude implementarlo.
@@ -15,7 +15,7 @@ Escribir un PRD simple y ver a Claude implementarlo.
    - **Opción B (Media):** Sistema de alertas cuando stock < 10
    - **Opción C (Avanzada):** Tu propio problema (si trajiste código)
 
-2. **Escribe el PRD (5-7 minutos)**
+2. **Escribe el PRD**
 
 Usa este template:
 
@@ -38,7 +38,7 @@ Usa este template:
 - [¿Cómo verifico que funciona?]
 ```
 
-3. **Dale el PRD a Claude (10 minutos)**
+3. **Dale el PRD a Claude**
    - Copia tu PRD completo
    - Pégalo en Claude Code
    - Si Claude pregunta algo, responde
@@ -53,10 +53,9 @@ Usa este template:
 
 ## Ejercicios POST-CURSO (Para practicar)
 
-### Nivel 1: Primeros pasos (Día 1-3)
+### Nivel 1: Primeros pasos
 
 #### Ejercicio 1.1: Exploración de código
-**Tiempo:** 10 minutos
 
 1. Abre el proyecto `proyecto-inventario` en VSCode
 2. Pregúntale a Claude:
@@ -75,7 +74,6 @@ Usa este template:
 ---
 
 #### Ejercicio 1.2: Crear tu primer claude.md
-**Tiempo:** 15 minutos
 
 1. Crea un archivo `claude.md` en la carpeta `proyecto-inventario/`
 2. Incluye (mínimo):
@@ -113,7 +111,6 @@ Ejemplo:
 ---
 
 #### Ejercicio 1.3: Refactoring simple
-**Tiempo:** 15 minutos
 
 En el proyecto `proyecto-inventario`:
 
@@ -135,10 +132,9 @@ En el proyecto `proyecto-inventario`:
 
 ---
 
-### Nivel 2: Desarrollo asistido (Semana 1)
+### Nivel 2: Desarrollo asistido
 
 #### Ejercicio 2.1: Implementar búsqueda case-insensitive
-**Tiempo:** 30 minutos
 
 **Problema:** La búsqueda actual es case-sensitive (buscar "laptop" no encuentra "Laptop")
 
@@ -182,7 +178,6 @@ Permitir que usuarios busquen productos sin preocuparse por mayúsculas/minúscu
 ---
 
 #### Ejercicio 2.2: Agregar campo "categoría"
-**Tiempo:** 45 minutos
 
 1. **Escribe un PRD completo** (no te saltes esto)
    - Agregar campo `category` a productos
@@ -213,7 +208,6 @@ Permitir que usuarios busquen productos sin preocuparse por mayúsculas/minúscu
 ---
 
 #### Ejercicio 2.3: Fixear el bug del CSV
-**Tiempo:** 30 minutos
 
 **Problema:** El export CSV no muestra correctamente caracteres especiales en Excel Windows
 
@@ -249,10 +243,9 @@ Permitir que usuarios busquen productos sin preocuparse por mayúsculas/minúscu
 
 ---
 
-### Nivel 3: Proyectos reales (Semana 2+)
+### Nivel 3: Proyectos reales
 
 #### Ejercicio 3.1: Implementar sistema de alertas
-**Tiempo:** 1-2 horas
 
 **Feature:** Detectar productos con stock bajo y mostrar alerta visual
 
@@ -276,7 +269,6 @@ Permitir que usuarios busquen productos sin preocuparse por mayúsculas/minúscu
 ---
 
 #### Ejercicio 3.2: Crear tu primer agente (Avanzado)
-**Tiempo:** 2-3 horas
 
 **Objetivo:** Agente Node.js que ejecuta ESLint y genera reporte
 
@@ -363,7 +355,6 @@ main();
 ---
 
 #### Ejercicio 3.3: Usa Claude en tu proyecto real
-**Tiempo:** Variable
 
 1. **Elige una tarea de tu trabajo real:**
    - Refactoring que venías posponiendo
@@ -378,8 +369,7 @@ main();
    - **VERIFICA TODO**
 
 3. **Documenta:**
-   - ¿Cuánto tiempo ahorró Claude?
-   - ¿Qué partes hizo bien?
+   - ¿Qué partes hizo bien Claude?
    - ¿Qué tuviste que corregir?
    - ¿Lo volverías a usar?
 

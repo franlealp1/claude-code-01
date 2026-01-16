@@ -344,9 +344,9 @@ Permitir exportar el inventario completo a formato CSV para análisis en hojas d
 
 Con este nivel de detalle, Claude puede implementar directamente. No hay ambigüedad, no hay preguntas, no hay ida y vuelta.
 
-### El tiempo invertido se recupera
+### El esfuerzo inicial vale la pena
 
-Escribir un buen PRD toma unos minutos extra. Pero esos minutos se recuperan (con creces) en menos iteraciones, menos correcciones, y código que hace exactamente lo que necesitas desde el principio.
+Escribir un buen PRD requiere más esfuerzo inicial, pero se recupera con creces en menos iteraciones, menos correcciones, y código que hace exactamente lo que necesitas desde el principio.
 
 ### Guarda tus PRDs
 
@@ -598,7 +598,7 @@ Este flujo te da control en cada paso. No estás a merced de lo que Claude decid
 
 Si olvidas todo lo demás, recuerda estos cinco principios:
 
-1. **Prompt claro = menos iteraciones.** El tiempo que inviertes escribiendo un buen PRD se recupera en menos ida y vuelta.
+1. **Prompt claro = menos iteraciones.** El esfuerzo que inviertes escribiendo un buen PRD se recupera en menos ida y vuelta.
 
 2. **Planea antes de codear.** Para tareas no triviales, pide un plan primero. Es más barato ajustar un plan que reescribir código.
 

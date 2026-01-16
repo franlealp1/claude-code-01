@@ -24,7 +24,7 @@ graph TD
 
 ---
 
-## Flujo para Tareas Pequeñas (< 30 min)
+## Flujo para Tareas Pequeñas
 
 Usa este flujo para bugs, cambios menores, o features simples que tocan 1-2 archivos.
 
@@ -69,7 +69,7 @@ git add . && git commit -m "fix: export CSV works with empty inventory"
 
 ---
 
-## Flujo para Features Medianas (30 min - 2 horas)
+## Flujo para Features Medianas
 
 Usa este flujo para features nuevas que tocan múltiples archivos pero tienen alcance claro.
 
@@ -151,7 +151,7 @@ git add . && git commit -m "feat: add low stock indicator to inventory list"
 
 ---
 
-## Flujo para Features Grandes (> 2 horas)
+## Flujo para Features Grandes
 
 Para features complejas, el flujo cambia: **divide antes de empezar**.
 
@@ -200,7 +200,6 @@ Aquí está el PRD para una feature grande:
 [pega el PRD]
 
 Divídelo en tareas pequeñas que pueda implementar una por una.
-Cada tarea debería ser completable en 30 minutos o menos.
 Ordénalas por dependencias (qué necesito hacer primero).
 ```
 

@@ -48,6 +48,25 @@ Un modelo de lenguaje normal genera texto. Un agente va más allá: puede **ejec
 
 Esto se conoce como **tool-calling** o **function-calling**. Cuando le pides algo a Claude, el modelo no solo genera una respuesta de texto — decide qué herramientas invocar para completar tu petición.
 
+```mermaid
+sequenceDiagram
+    participant Usuario
+    participant Claude
+    participant Tools
+    participant Proyecto
+
+    Usuario->>Claude: "Explícame la función getAllProducts"
+    Claude->>Claude: Analiza petición<br/>Decide usar Read
+    Claude->>Tools: Read(inventoryService.js)
+    Tools->>Proyecto: Lee archivo
+    Proyecto-->>Tools: Contenido del archivo
+    Tools-->>Claude: Resultado de lectura
+    Claude->>Claude: Analiza código
+    Claude-->>Usuario: Explicación con referencias<br/>(inventoryService.js:48)
+```
+
+Este flujo muestra la diferencia clave: Claude no es solo un chatbot que responde preguntas — es un agente que puede ejecutar acciones en tu proyecto.
+
 ### Las herramientas disponibles
 
 Claude tiene acceso a herramientas específicas dentro de Claude Code:
@@ -60,28 +79,73 @@ Claude tiene acceso a herramientas específicas dentro de Claude Code:
 
 Cuando le pides "explícame esta función", Claude usa Read. Cuando le pides "arregla este bug", usa Read para entender el problema y Edit para modificar el código.
 
-### La arquitectura completa: Sistema, Agente y Subagentes
+### La arquitectura completa: Tools y Subagentes
 
-Hay una capa más que es importante entender. Claude (el agente principal con el que conversas) puede **lanzar otros agentes especializados** para tareas específicas. Estos se llaman subagentes.
+Hay dos niveles de capacidades que es importante entender:
 
+#### Nivel 1: Tools (Herramientas)
+
+Claude tiene acceso directo a herramientas básicas para interactuar con tu código:
+
+```mermaid
+graph LR
+    A[Claude] --> B[Read<br/>Leer archivos]
+    A --> C[Edit<br/>Modificar archivos]
+    A --> D[Write<br/>Crear archivos]
+    A --> E[Bash<br/>Ejecutar comandos]
+    A --> F[Grep<br/>Buscar en código]
+    A --> G[Glob<br/>Encontrar archivos]
+    A --> H[Task<br/>Lanzar subagentes]
+
+    style A fill:#fff9c4
+    style B fill:#e1f5fe
+    style C fill:#e1f5fe
+    style D fill:#e1f5fe
+    style E fill:#e1f5fe
+    style F fill:#e1f5fe
+    style G fill:#e1f5fe
+    style H fill:#f3e5f5
 ```
-Claude Code (Sistema/Framework)
-       │
-       ▼
-Agente Principal (tu conversación con Claude)
-       │
-       ▼ [puede lanzar]
-Subagentes especializados (security-auditor, Explore, Plan...)
+
+Cuando le pides "explícame esta función", Claude usa **Read**. Cuando le pides "arregla este bug", usa **Read** para entender el problema y **Edit** para modificar el código.
+
+#### Nivel 2: Subagentes Especializados
+
+Para tareas complejas, Claude puede lanzar **subagentes especializados** mediante la tool **Task**. Estos subagentes trabajan de forma autónoma y tienen acceso a su propio conjunto de tools:
+
+```mermaid
+graph TD
+    A[Claude Code<br/>Sistema/Framework] --> B[Agente Principal<br/>Tu conversación con Claude]
+    B --> |Tool: Task| C[Subagentes especializados]
+    C --> D[Explore<br/>Exploración de código]
+    C --> E[Plan<br/>Diseño de implementación]
+    C --> F[Bash<br/>Tareas de terminal intensivas]
+    C --> G[general-purpose<br/>Tareas multi-paso complejas]
+
+    D --> |usa| H[Read, Grep, Glob]
+    E --> |usa| I[Read, Grep, Glob, Glob]
+    F --> |usa| J[Bash]
+    G --> |usa| K[Todas las tools]
+
+    style A fill:#e1f5fe
+    style B fill:#fff9c4
+    style C fill:#f3e5f5
+    style D fill:#c8e6c9
+    style E fill:#c8e6c9
+    style F fill:#c8e6c9
+    style G fill:#c8e6c9
 ```
 
-Por ejemplo, si le pides "audita la seguridad de mi código", Claude no hace todo el trabajo directamente. En su lugar, lanza un subagente llamado `security-auditor` que está especializado en encontrar vulnerabilidades. Este subagente trabaja de forma autónoma — lee archivos, busca patrones peligrosos, analiza dependencias — y cuando termina, devuelve un reporte estructurado al agente principal.
+**Ejemplo de subagentes en acción:**
 
-Otros subagentes que Claude puede usar incluyen:
-- **Explore**: para entender la estructura de un codebase grande
-- **Plan**: para diseñar estrategias de implementación antes de escribir código
-- **Bash**: para tareas que requieren ejecución intensiva de comandos
+Si le pides "explora cómo funciona la autenticación en este proyecto", Claude no hace todo el trabajo directamente. En su lugar, lanza un subagente **Explore** que está especializado en navegar y entender codebases grandes. Este subagente trabaja de forma autónoma — usa Glob para encontrar archivos relevantes, Grep para buscar patrones, Read para analizar el código — y cuando termina, devuelve un reporte estructurado al agente principal.
 
-Esta arquitectura de subagentes es lo que permite a Claude manejar tareas complejas que serían difíciles de hacer en una sola pasada.
+Otros subagentes incluyen:
+- **Plan**: diseña estrategias de implementación antes de escribir código
+- **Bash**: para tareas que requieren ejecución intensiva de comandos de terminal
+- **general-purpose**: para tareas complejas multi-paso que requieren autonomía
+
+**La diferencia clave:** Las tools son acciones directas (leer un archivo, ejecutar un comando). Los subagentes son agentes completos que usan esas tools de forma autónoma para completar objetivos complejos.
 
 ### Diferencia con ChatGPT
 
@@ -472,6 +536,8 @@ Si empiezas a notar que Claude no recuerda lo que dijiste hace 10 mensajes, prob
 ## 11. Flujo Completo Profesional
 
 Todo lo que has aprendido se integra en un flujo de trabajo: **PRD → Plan → Implementación → Verificación**.
+
+> **📚 Lectura recomendada**: Para profundizar en flujos de trabajo prácticos con ejemplos detallados, consulta [Flujos de trabajo.md](./Flujos%20de%20trabajo.md). Este documento describe el flujo PIV (Plan → Implement → Validate) y patrones específicos para tareas pequeñas, medianas y grandes.
 
 ### El flujo en acción
 

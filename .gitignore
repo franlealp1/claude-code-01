@@ -1,0 +1,36 @@
+# Claude Code local settings
+.claude/
+.claudesync/
+
+# Dependencies
+node_modules/
+package-lock.json
+.pnpm-store/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Temporary files
+*.tmp
+.cache/
+dist/
+build/
